@@ -24,4 +24,18 @@ public class RefString {
 
 		return ref;
 	}
+    
+    public static int[] createBadReferenceString() {
+
+    	ref = new int[100];
+	    page = 0;
+	    for (int i = 0; i < 100; i++) {
+
+	    	double random = Math.random();
+	    	page = (int) (random * 100);
+	    	ref[i] = page;
+	    }
+
+	    return ref;
+	}
 }
