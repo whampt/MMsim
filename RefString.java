@@ -5,9 +5,9 @@ public class RefString {
 
 	public static int[] createGoodReferenceString() {
 
-		ref = new int[100];
+		ref = new int[10000];
 		page = 0;
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 10000; i++) {
 
 			double random = Math.random();
 			if (random < 0.9) {
@@ -27,9 +27,9 @@ public class RefString {
     
     public static int[] createBadReferenceString() {
 
-    	ref = new int[100];
+    	ref = new int[10000];
 	    page = 0;
-	    for (int i = 0; i < 100; i++) {
+	    for (int i = 0; i < 10000; i++) {
 
 	    	double random = Math.random();
 	    	page = (int) (random * 100);
