@@ -1,4 +1,3 @@
-
 public class shortProgram {
 
 	public enum Type {
@@ -66,19 +65,19 @@ public class shortProgram {
 			case GOOD:
 
 				page = 0;
-					for (int i = 0; i < 10000; i++) {
+				for (int i = 0; i < 10000; i++) {
 
-						double random = Math.random();
-						if (random < 0.9) {
-							page = (int) (random * 10);
-							ref[i] = page;
-						}
-			
-						else {
-							page = (int) (Math.random() * 90) + 10;
-							ref[i] = page;
-						}
+					double random = Math.random();
+					if (random < 0.9) {
+						page = (int) (random * 10);
+						ref[i] = page;
 					}
+			
+					else {
+						page = (int) (Math.random() * 90) + 10;
+						ref[i] = page;
+					}
+				}
 				break;
 
 			case RANDOM:
