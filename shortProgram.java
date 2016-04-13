@@ -1,15 +1,37 @@
 
-public class shortProgram 
-{
+public class shortProgram {
+
+	public enum Type {
+		GOOD, RANDOM
+	}
 
 	private int[] refString;
+	private Type type;
+	private int page;
 
-	public shortProgram(int size)
-	{
+	// Creates a "good" program of a set size. Use for testing algorithms
+	public shortProgram(int size) {
 		refString = new int[size];
+		this.type = GOOD;
+
+		page = 0;
+		for (int i = 0; i < size; i++) {
+
+			double random = Math.random();
+			if (random < 0.9) {
+				page = (int) (random * 10);
+				ref[i] = page;
+			}
+			
+			else {
+				page = (int) (Math.random() * 90) + 10;
+				ref[i] = page;
+			}
+		}
 	}
-	public shortProgram() 
-	{
+
+	// Will's intial program constructor. Will be kept for now
+	public shortProgram() {
 		refString = new int[300];
 		
 		for(int i = 0; i< 243; i++)
@@ -33,15 +55,63 @@ public class shortProgram
 		}
 	}
 
-	public int getIndex(int i)
-	{
+	// Generates a "good" or "random" program based on type parameter
+	public shortProgram(Type type) {
+
+		refString = new int[10000];
+		this.type = type;
+
+		switch (type) {
+
+			case GOOD:
+
+				page = 0;
+					for (int i = 0; i < 10000; i++) {
+
+						double random = Math.random();
+						if (random < 0.9) {
+							page = (int) (random * 10);
+							ref[i] = page;
+						}
+			
+						else {
+							page = (int) (Math.random() * 90) + 10;
+							ref[i] = page;
+						}
+					}
+				break;
+
+			case RANDOM:
+
+	    		page = 0;
+	    		for (int i = 0; i < 10000; i++) {
+
+	    			double random = Math.random();
+	    			page = (int) (random * 100);
+	    			ref[i] = page;
+	    		}
+	    		break;
+
+	    	default:
+
+	    		System.out.println("Not a valid type of reference string");
+	    		break;
+		}
+	}
+
+	public int getIndex(int i) {
 
 		return refString[i];
 	}
-	public int size()
-	{
+
+	public int size() {
 		return refString.length;
 	}
+
+	public Type getType() {
+		return type;
+	}
+
 	 // swaps array elements i and j
     public void exch(int i, int j) {
         int swap = refString[i];
