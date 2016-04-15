@@ -23,6 +23,11 @@ public class LruStack
 	{
 		return list.removeFirst();
 	}
+	public void removeLast()
+	{
+		list.removeLast();
+	}
+
 	public Integer peek() 
 	{
 		return list.getFirst();

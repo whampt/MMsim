@@ -36,5 +36,9 @@ public class Page implements Comparable<Page>{
 		return pageNum==i;
 	}
 	
+	public String toString() {
+		String s = pageNum + " " + useCount;
+		return s;
+	}
 	
 }

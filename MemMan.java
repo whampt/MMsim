@@ -44,16 +44,31 @@ public class MemMan
 		
 		System.out.println("Thanks");
 		in.close();
-		shortProgram program = new shortProgram();
+		shortProgram program = new shortProgram(false);
 		shortProgram p1 = new shortProgram((byte)(100));
 		p1.shuffle(); 
 		shortProgram p2 = new shortProgram(true);
 		int pageFaults = Optimal(program, setSize);
 		int pageFaults0 = Optimal(p1, setSize);
 		int pageFaults1 =Optimal(p2, setSize);
+		int pageFaultslru = lru(program, setSize);
+		int pageFaultslru0 = lru(p1, setSize);
+		int pageFaultslru1 =lru(p2, setSize);
+		RandomAlgorithm ra1 = new RandomAlgorithm(program, setSize);
+		RandomAlgorithm ra2 = new RandomAlgorithm(p1, setSize);
+		RandomAlgorithm ra3 = new RandomAlgorithm(p2, setSize);
+		int pF0 = ra1.simulateDemandPagingRandomAlgorithm();
+		int pF1 = ra2.simulateDemandPagingRandomAlgorithm();
+		int pF2 = ra3.simulateDemandPagingRandomAlgorithm();
 		System.out.println("For program size: " + program.size() + ",  "+  pageFaults +" page faults occured with a resident set size of:  " +setSize + " using Optimal");
 		System.out.println("For program size: " + p1.size() + ",  "+  pageFaults0 +" page faults occured with a resident set size of:  " +setSize  + " using Optimal");
 		System.out.println("For program size: " + p2.size() + ",  "+  pageFaults1 +" page faults occured with a resident set size of:  " +setSize  + " using Optimal");
+		System.out.println("For program size: " + program.size() + ",  "+  pageFaultslru +" page faults occured with a resident set size of:  " +setSize + " using LRUA");
+		System.out.println("For program size: " + p1.size() + ",  "+  pageFaultslru0 +" page faults occured with a resident set size of:  " +setSize  + " using LRUA");
+		System.out.println("For program size: " + p2.size() + ",  "+  pageFaultslru1 +" page faults occured with a resident set size of:  " +setSize  + " using LRUA");
+		System.out.println("For program size: " + program.size() + ",  "+  pF0 +" page faults occured with a resident set size of:  " +setSize  + " using Random");
+		System.out.println("For program size: " + p1.size() + ",  "+  pF1 +" page faults occured with a resident set size of:  " +setSize  + " using Random");
+		System.out.println("For program size: " + p2.size() + ",  "+  pF2 +" page faults occured with a resident set size of:  " +setSize  + " using Random");
 		/**
 		 * To implement optimal when workSet is full, make a copy of workSet called elimSet. compare each int i
 		 * in elimSet to i+1, i+2, ... , i+n-1, i+n. If an element in elimSet is equal to an int in the upcoming
@@ -69,8 +84,8 @@ public class MemMan
 		Set<Integer> resSet = new HashSet<Integer>(resSetMaxSize, (float)2.0);
 		Set<Integer> elimSet = new HashSet<Integer>(resSetMaxSize, (float)2.0);	
 		
-		program.shuffle();
-		program.shuffle();
+		//program.shuffle();
+		//program.shuffle();
 		//program.show();
 		/**
 		 * outer loop in which we go through the pages required by our 'program'
@@ -118,27 +133,28 @@ public class MemMan
 	
 	{
 		PriorityQueue<Page> resSet = new PriorityQueue<Page>();
-		int pages=0;
+		int pageFaults=0;
 		boolean flag;
 		for(int i=0; i< program.size(); i++){
 			flag=false;
 			for(Page p : resSet){
-				if(p.equals(i)) {
+				if(p.equals(program.getIndex(i))) {
 					p.access();
 					flag=true;
 					break;
 				}
 			}
 			if(!flag){
+				pageFaults++;
 				if(resSet.size()>=setSize){
 					//take out the least recently used page and put a new one in
 					resSet.poll();
-					pages++;
+					
 				}
-				Page p = new Page(i);
+				Page p = new Page(program.getIndex(i));
 				resSet.add(p);
 			}
 		}
-		return pages;
+		return pageFaults;
 	}
 }

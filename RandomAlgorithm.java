@@ -2,31 +2,30 @@
 
 public class RandomAlgorithm
 {
-    static int[] pages;
-	static int[] resSet;
-	static Boolean inResSet;
-	static int numInRes;
-	static int pageFaults;
+    int[] pages;
+	int[] resSet;
+	Boolean inResSet;
+	int numInRes;
+	int pageFaults;
 	public RandomAlgorithm(shortProgram len, int resSize)//int thinkoMachigco
 	{
-		pages=new int[len];
-		resSet=len.getArray();
+		pages=len.getArray();
+		resSet=new int[resSize];
 		inResSet=false;
 		numInRes=0;
 		genStringRan();
 		pageFaults=0;
 	}
-	private static void genStringRan()
+	private void genStringRan()
 	{
 		for(int i=0;i<pages.length; i++)
 		{
 			int inty=(int) Math.round(Math.random()*99);
-			String s=Integer.toString(inty);
-			pages[i]=new String(s);
+			pages[i]= inty;
 //			System.out.println(pages[i]);
 		}
 	}
-	public static void simulateDemandPagingRandomAlgorithm()
+	public int simulateDemandPagingRandomAlgorithm()
 	{
 		for(int i=0;i<pages.length;i++)
 		{
@@ -47,8 +46,9 @@ public class RandomAlgorithm
 			
 			pageFaults++;
 		}
+		return pageFaults;
 	}
-	private static void checkIfInRes(int s)
+	private void checkIfInRes(int s)
 	{
 		int i;
 		for(i=0;i<resSet.length; i++)
@@ -70,7 +70,7 @@ public class RandomAlgorithm
 //		System.out.println("Greetings");
 		
 	}
-	private static void implementRandomAlgorithm(int s)
+	private void implementRandomAlgorithm(int s)
 	{
 		int rando= (int)Math.round(Math.random()*resSet.length);
 		if(rando==resSet.length)

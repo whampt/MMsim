@@ -4,59 +4,6 @@ public class shortProgram {
 	private int[] refString;
 	private int page;
 
-	// Creates a "good" program of a set size. Use for testing algorithms
-	public shortProgram(int size) {
-		refString = new int[size];
-
-		page = 0;
-		for (int i = 0; i < size; i++) {
-
-			double random = Math.random();
-			if (random < 0.9) {
-				page = (int) (random * 10);
-				refString[i] = page;
-			}
-			
-			else {
-				page = (int) (Math.random() * 90) + 10;
-				refString[i] = page;
-			}
-
-			// Uses locality to state that the next page will occur in a 
-			// good program occasianally.
-			while (Math.random() < 0.1) {
-				i++;
-				page++;
-				refString[i] = page;
-			}
-		}
-	}
-
-	// Will's intial program constructor. Will be kept for now
-	public shortProgram() {
-		refString = new int[300];
-		
-		for(int i = 0; i< 243; i++)
-			refString[i] = 1;
-
-		for(int i = 243; i<257; i++)
-			refString[i] = 0;
-
-		for(int i=257; i<270;i++)
-			refString[i] = 2;
-
-		int y = 3;
-		for(int i=270; i<297; i++)
-		{
-			refString[i] = y++;	
-		}
-		y = 3; 
-		for(int i=297; i<300; i++)
-		{
-			refString[i] = y++;
-		}
-	}
-
 	// Generates a "good" or "random" program based on boolean.  If true, create good. If false,
 	// create a random string
 	public shortProgram(boolean type) {
