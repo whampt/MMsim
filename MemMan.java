@@ -4,6 +4,8 @@
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -43,8 +45,15 @@ public class MemMan
 		System.out.println("Thanks");
 		in.close();
 		shortProgram program = new shortProgram();
+		shortProgram p1 = new shortProgram((byte)(100));
+		p1.shuffle(); 
+		shortProgram p2 = new shortProgram(true);
 		int pageFaults = Optimal(program, setSize);
-		System.out.println("For program size: " + program.size() + ",  "+  pageFaults +" page faults occured with a resident set size of:  " +setSize);
+		int pageFaults0 = Optimal(p1, setSize);
+		int pageFaults1 =Optimal(p2, setSize);
+		System.out.println("For program size: " + program.size() + ",  "+  pageFaults +" page faults occured with a resident set size of:  " +setSize + " using Optimal");
+		System.out.println("For program size: " + p1.size() + ",  "+  pageFaults0 +" page faults occured with a resident set size of:  " +setSize  + " using Optimal");
+		System.out.println("For program size: " + p2.size() + ",  "+  pageFaults1 +" page faults occured with a resident set size of:  " +setSize  + " using Optimal");
 		/**
 		 * To implement optimal when workSet is full, make a copy of workSet called elimSet. compare each int i
 		 * in elimSet to i+1, i+2, ... , i+n-1, i+n. If an element in elimSet is equal to an int in the upcoming
@@ -54,19 +63,20 @@ public class MemMan
 		
 
 	}
-	public static int Optimal(shortProgram program, int res )
+	public static int Optimal(shortProgram program, int resSetMaxSize )
 	{
 		int pageFaults =0;
-		Set<Integer> resSet = new HashSet<Integer>(res, (float)2.0);
-		Set<Integer> elimSet = new HashSet<Integer>(res, (float)2.0);	
+		Set<Integer> resSet = new HashSet<Integer>(resSetMaxSize, (float)2.0);
+		Set<Integer> elimSet = new HashSet<Integer>(resSetMaxSize, (float)2.0);	
 		
+		program.shuffle();
 		program.shuffle();
 		//program.show();
 		/**
 		 * outer loop in which we go through the pages required by our 'program'
 		 * y is a counter for how many slots are filled in resident set
 		 */
-		int y = 0;
+		int resSetCurrSize = 0;
 		for(int i=0; i< program.size(); i++)
 		{ 
 			  
@@ -74,32 +84,61 @@ public class MemMan
 			{
 				pageFaults++;
 
-				if (y < res)
+				if (resSetCurrSize <= resSetMaxSize)
 				{
 					resSet.add(program.getIndex(i));
-					y++;
+					resSetCurrSize++;
 				}
 				else // a page needs to be replaced
 				{
 					Iterator<Integer> iter = resSet.iterator();
 
-					while (iter.hasNext())
+					while (iter.hasNext())	
 						elimSet.add(iter.next());
-
+					
 					int j=i+1;	
+					
 					while(j < program.size() && elimSet.size()>1)
 					{
-						if(elimSet.contains(program.getIndex(y)))
-							elimSet.remove(program.getIndex(y));
+						if(elimSet.contains(program.getIndex(j)))
+							elimSet.remove(program.getIndex(j));
 						j++;					
 					}
-					iter = resSet.iterator();
+					
+					iter = elimSet.iterator();
 					resSet.remove(iter.next());
+					elimSet.clear();
 					resSet.add(program.getIndex(i));
 				}
 			}	
 		}
 		return pageFaults;	
 	}
-
+	private static int lru(shortProgram program, int setSize) // EXTREMELY HIGH PAGE FAULTS!!
+	
+	{
+		PriorityQueue<Page> resSet = new PriorityQueue<Page>();
+		int pages=0;
+		boolean flag;
+		for(int i=0; i< program.size(); i++){
+			flag=false;
+			for(Page p : resSet){
+				if(p.equals(i)) {
+					p.access();
+					flag=true;
+					break;
+				}
+			}
+			if(!flag){
+				if(resSet.size()>=setSize){
+					//take out the least recently used page and put a new one in
+					resSet.poll();
+					pages++;
+				}
+				Page p = new Page(i);
+				resSet.add(p);
+			}
+		}
+		return pages;
+	}
 }

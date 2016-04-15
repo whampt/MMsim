@@ -3,10 +3,12 @@ This is the project for CS433 Operating Systems. More information will be posted
 A Good Program will use 10% of its code 90% of time.
 
 We will assume:
-  1000 pages of code in each of our programs.
+  100 pages of code in each of our programs.
   10,000 pages needed for one run of program.
-  first 100 pages are the most used at 9,000 references.
-  pages 100-999 are used 1,000 times.
-  The pages needed to run the program are a refernce string inside an array 10,000 long. The first index is the first page needed to run the program, 
-  and the last index is the last page needed to run the program.  
-  
+  first 10 pages are the most used at 9,000 references.
+  pages 10-99 are used 1,000 times.
+  The pages needed to run the program are a reference string inside an array 10,000 long. The first index is the first page needed to run the program, 
+  and the last index is the last page needed to run the program.
+
+The class shortProgram contains an array of integers, which will signify the pages in the resident set. Each algorithm--optimal, LRUA, and random--needs to use this
+constructor to perform the algorithm to make testing consistent and simple.
