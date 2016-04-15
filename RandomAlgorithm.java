@@ -2,23 +2,19 @@
 
 public class RandomAlgorithm
 {
-    static String[] pages;
-	static String[] resSet;
+    static int[] pages;
+	static int[] resSet;
 	static Boolean inResSet;
 	static int numInRes;
 	static int pageFaults;
-	public RandomAlgorithm(int len, int resSize)//int thinkoMachigco
+	public RandomAlgorithm(shortProgram len, int resSize)//int thinkoMachigco
 	{
-		pages=new String[len];
-		resSet=new String[resSize];
+		pages=new int[len];
+		resSet=len.getArray();
 		inResSet=false;
 		numInRes=0;
 		genStringRan();
 		pageFaults=0;
-		for(int i=0;i<resSet.length;i++)
-		{
-			resSet[i]=new String("null");
-		}
 	}
 	private static void genStringRan()
 	{
@@ -52,13 +48,13 @@ public class RandomAlgorithm
 			pageFaults++;
 		}
 	}
-	private static void checkIfInRes(String s)
+	private static void checkIfInRes(int s)
 	{
 		int i;
 		for(i=0;i<resSet.length; i++)
 		{
 //			System.out.println("_"+resSet[i]+"_"+s);
-			if(resSet[i].equals(s))
+			if(resSet[i]==s)
 			{
 				inResSet=true;
 				break;
@@ -74,7 +70,7 @@ public class RandomAlgorithm
 //		System.out.println("Greetings");
 		
 	}
-	private static void implementRandomAlgorithm(String s)
+	private static void implementRandomAlgorithm(int s)
 	{
 		int rando= (int)Math.round(Math.random()*resSet.length);
 		if(rando==resSet.length)
