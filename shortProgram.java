@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 public class shortProgram {
 
