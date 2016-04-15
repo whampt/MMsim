@@ -47,10 +47,13 @@ public class LRU
 		 * add n random integers less than 100 to the list 
 		 */
 		List<Integer> program = new ArrayList<Integer>();
-		for(int i =0;i<50;i++){
-			program.add((int)(Math.random()*100));
+		//for(int i =0;i<15;i++){
+			//program.add((int)(Math.random()*100));
+			int[] array = {1,2,3,4,5,6,7,10,9,10};
+			for(int i =0;i<array.length;i++){
+				program.add((array[i]));
 		}
-		//System.out.println(program.toString());
+		System.out.println(program.toString());
 		int pageFaults = lru(program, setSize);
 		System.out.println("For program size: " + program.size() + ",  "+  pageFaults +" page faults occured with a resident set size of:  " +setSize);
 		
@@ -61,13 +64,14 @@ public class LRU
 	 * lru method that accept a list and resident set size as parameter 
 	 * make a priority queue of the resident set
 	 * if a page is in the resident set, check if its equal with the new page, and if it is, increment its useCount and set flag to true
-	 * if page is not flagged and resident set is greater than the set size,take out the least recently used, create a new page and put it in the resident set 
+	 * if page is not flagged, increment pages.if resident set is greater than the set size,take out the least recently used, create a new page and put it in the resident set 
 	 */
 	private static int lru(List<Integer> program, int setSize) {
 		PriorityQueue<Page> resSet = new PriorityQueue<Page>();
 		int pages=0;
 		boolean flag;
 		for(int i : program){
+			//System.out.println(i);
 			flag=false;
 			for(Page p : resSet){
 				if(p.equals(i)) {
@@ -77,10 +81,10 @@ public class LRU
 				}
 			}
 			if(!flag){
+				pages++;
 				if(resSet.size()>=setSize){
 					//take out the least recently used page and put a new one in
 					resSet.poll();
-					pages++;
 				}
 				Page p = new Page(i);
 				resSet.add(p);
