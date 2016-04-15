@@ -78,14 +78,6 @@ public class shortProgram {
 					page = (int) (Math.random() * 90) + 10;
 					refString[i] = page;
 				}
-
-				// Uses locality to state that the next page will occur in a 
-				// good program occasianally.
-				while (Math.random() < 0.1) {
-					i++;
-					page++;
-					refString[i] = page;
-				}
 			}
 		}
 
@@ -151,6 +143,10 @@ public class shortProgram {
 	public int getIndex(int i) {
 
 		return refString[i];
+	}
+
+	public int[] getArray() {
+		return refString;
 	}
 
 	public int size() {
