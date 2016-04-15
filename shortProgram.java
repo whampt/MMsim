@@ -1,18 +1,12 @@
 
 public class shortProgram {
 
-	public enum Type {
-		GOOD, RANDOM
-	}
-
 	private int[] refString;
-	private Type type;
 	private int page;
 
 	// Creates a "good" program of a set size. Use for testing algorithms
 	public shortProgram(int size) {
 		refString = new int[size];
-		this.type = GOOD;
 
 		page = 0;
 		for (int i = 0; i < size; i++) {
@@ -55,48 +49,87 @@ public class shortProgram {
 		}
 	}
 
-	// Generates a "good" or "random" program based on type parameter
-	public shortProgram(Type type) {
+	// Generates a "good" or "random" program based on boolean.  If true, create good. If false,
+	// create a random string
+	public shortProgram(boolean type) {
 
 		refString = new int[10000];
-		this.type = type;
 
-		switch (type) {
+		if (type == true) {
 
-			case GOOD:
+			page = 0;
+			for (int i = 0; i < 10000; i++) {
 
-				page = 0;
-					for (int i = 0; i < 10000; i++) {
-
-						double random = Math.random();
-						if (random < 0.9) {
-							page = (int) (random * 10);
-							ref[i] = page;
-						}
-			
-						else {
-							page = (int) (Math.random() * 90) + 10;
-							ref[i] = page;
-						}
+				double random = Math.random();
+				if (random < 0.9) {
+					page = (int) (random * 10);
+					ref[i] = page;
 					}
-				break;
-
-			case RANDOM:
-
-	    		page = 0;
-	    		for (int i = 0; i < 10000; i++) {
-
-	    			double random = Math.random();
-	    			page = (int) (random * 100);
-	    			ref[i] = page;
-	    		}
-	    		break;
-
-	    	default:
-
-	    		System.out.println("Not a valid type of reference string");
-	    		break;
+			
+				else {
+					page = (int) (Math.random() * 90) + 10;
+					ref[i] = page;
+				}
+			}
 		}
+
+		else {
+
+	    	page = 0;
+	    	for (int i = 0; i < 10000; i++) {
+
+	    		double random = Math.random();
+	    		page = (int) (random * 100);
+	    		ref[i] = page;
+	    	}
+		}
+	}
+
+	/** Byte is a 8-bit signed integer, ranging from -127 to 128. Send this constructor 100 or it wont be happy.
+	*   Either a failure with ArrayOutOfBounds or an failure later during paging with null returns from array.
+	*   This is a statically assigned string with pages 0-9 being used 90% of the time, split evenly among 
+	*   the pages for 9% occurrence each(810 each). The remaining 90 pages called 1000 times have the 90/10 rule applied 
+	*   again. Nine pages are called 900 times for 1% occurrence each. The remaining 81 pages are called only 100 times total.
+	*   We could further the 90/10 rule here, and some of the pages from 0-99 pages will not occur at all.
+	*   We will have all 0-99 pages appear, but will simulate this behavior by giving 10% of the (5)remaining 
+	*   81 pages three occurrences and 3 numbers 2 occurrences. 
+	*    
+	*   Aha! Come to think of it, with a random spread , how will we know how many pages we have ?  
+	*/
+	public shortProgram(byte pages) {
+		refString = new int[pages*100];
+		int page = 0;
+		for(int i = 0; i< 8999; i++)
+		{ 	if(page < 10)
+				refString[i] = page;
+			else
+				refString[i] = (page = 0);
+			page++;
+		}
+		page = 10;
+		for(int i = 8999; i<9899; i++)
+		{		if(page < 19)
+				refString[i] = page;
+			else
+				refString[i] = (page = 10);
+			page++;
+		}
+		page = 19;
+		for(int i = 9899; i < 9980;i++)
+		{	if(page < 100)
+				refString[i] = page;
+			else
+				refString[i] = (page = 19);
+			page++;			
+		}
+			page = 19;
+			{	for(int i = 9980; i < 9999;i++)
+				if(page < 24)
+					refString[i] = page;
+				else
+					refString[i] = (page = 19);
+				page++;	
+			}
 	}
 
 	public int getIndex(int i) {
@@ -106,10 +139,6 @@ public class shortProgram {
 
 	public int size() {
 		return refString.length;
-	}
-
-	public Type getType() {
-		return type;
 	}
 
 	 // swaps array elements i and j
