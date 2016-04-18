@@ -180,7 +180,7 @@ public class MemManII
 		for(int i=0; i< program.size(); i++){
 			flag=false;
 			for(Page p : resSet){
-				if(p.equals(i)) {
+				if(p.equals(program.getIndex(i))) {
 					p.access();
 					flag=true;
 					break;
@@ -192,7 +192,7 @@ public class MemManII
 					resSet.poll();
 					pages++;
 				}
-				Page p = new Page(i);
+				Page p = new Page(program.getIndex(i));
 				resSet.add(p);
 			}
 		}

@@ -74,7 +74,7 @@ public class LRU
 			//System.out.println(i);
 			flag=false;
 			for(Page p : resSet){
-				if(p.equals(i)) {
+				if(p.equals(program.getIndex(i))) {
 					p.access();
 					flag=true;
 					break;
@@ -86,7 +86,7 @@ public class LRU
 					//take out the least recently used page and put a new one in
 					resSet.poll();
 				}
-				Page p = new Page(i);
+				Page p = new Page(program.getIndex(i));
 				resSet.add(p);
 			}
 		}
