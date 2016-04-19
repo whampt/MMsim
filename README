@@ -12,3 +12,8 @@ We will assume:
 
 The class shortProgram contains an array of integers, which will signify the pages in the resident set. Each algorithm--optimal, LRUA, and random--needs to use this
 constructor to perform the algorithm to make testing consistent and simple.
+
+The Test.java class creates 100 different shortPrograms that are random, good, or very structured. Then each algorithm is tested with resident set sizes 15-30,
+which can be tweaked in the class. The results are printed in a document named tests.txt
+
+With the results gathered, we just need to write the paper and talk about it!
