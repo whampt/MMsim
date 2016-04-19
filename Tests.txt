@@ -1,0 +1,273 @@
+Optimal, bad, set size 10: 6274
+Optimal, good, set size 10: 916
+Optimal, great, set size 10: 847
+
+LRUA, bad, set size 10: 8999
+LRUA, good, set size 10: 2444
+LRUA, great, set size 10: 2652
+
+Random, bad, set size 10: 9001
+Random, good, set size 10: 8996
+Random, great, set size 10: 8994
+
+
+Optimal, bad, set size 11: 6090
+Optimal, good, set size 11: 855
+Optimal, great, set size 11: 661
+
+LRUA, bad, set size 11: 8903
+LRUA, good, set size 11: 2094
+LRUA, great, set size 11: 2157
+
+Random, bad, set size 11: 8892
+Random, good, set size 11: 8894
+Random, great, set size 11: 8898
+
+
+Optimal, bad, set size 12: 5899
+Optimal, good, set size 12: 812
+Optimal, great, set size 12: 527
+
+LRUA, bad, set size 12: 8798
+LRUA, good, set size 12: 1814
+LRUA, great, set size 12: 1732
+
+Random, bad, set size 12: 8797
+Random, good, set size 12: 8793
+Random, great, set size 12: 8797
+
+
+Optimal, bad, set size 13: 5732
+Optimal, good, set size 13: 780
+Optimal, great, set size 13: 421
+
+LRUA, bad, set size 13: 8702
+LRUA, good, set size 13: 1642
+LRUA, great, set size 13: 1401
+
+Random, bad, set size 13: 8695
+Random, good, set size 13: 8699
+Random, great, set size 13: 8697
+
+
+Optimal, bad, set size 14: 5567
+Optimal, good, set size 14: 740
+Optimal, great, set size 14: 340
+
+LRUA, bad, set size 14: 8602
+LRUA, good, set size 14: 1476
+LRUA, great, set size 14: 1121
+
+Random, bad, set size 14: 8596
+Random, good, set size 14: 8595
+Random, great, set size 14: 8588
+
+
+Optimal, bad, set size 15: 5408
+Optimal, good, set size 15: 714
+Optimal, great, set size 15: 272
+
+LRUA, bad, set size 15: 8504
+LRUA, good, set size 15: 1371
+LRUA, great, set size 15: 906
+
+Random, bad, set size 15: 8495
+Random, good, set size 15: 8494
+Random, great, set size 15: 8494
+
+
+Optimal, bad, set size 16: 5256
+Optimal, good, set size 16: 691
+Optimal, great, set size 16: 218
+
+LRUA, bad, set size 16: 8404
+LRUA, good, set size 16: 1278
+LRUA, great, set size 16: 725
+
+Random, bad, set size 16: 8391
+Random, good, set size 16: 8394
+Random, great, set size 16: 8394
+
+
+Optimal, bad, set size 17: 5105
+Optimal, good, set size 17: 668
+Optimal, great, set size 17: 173
+
+LRUA, bad, set size 17: 8295
+LRUA, good, set size 17: 1219
+LRUA, great, set size 17: 587
+
+Random, bad, set size 17: 8293
+Random, good, set size 17: 8291
+Random, great, set size 17: 8294
+
+
+Optimal, bad, set size 18: 4972
+Optimal, good, set size 18: 647
+Optimal, great, set size 18: 138
+
+LRUA, bad, set size 18: 8204
+LRUA, good, set size 18: 1152
+LRUA, great, set size 18: 473
+
+Random, bad, set size 18: 8194
+Random, good, set size 18: 8195
+Random, great, set size 18: 8203
+
+
+Optimal, bad, set size 19: 4837
+Optimal, good, set size 19: 623
+Optimal, great, set size 19: 113
+
+LRUA, bad, set size 19: 8101
+LRUA, good, set size 19: 1102
+LRUA, great, set size 19: 386
+
+Random, bad, set size 19: 8097
+Random, good, set size 19: 8095
+Random, great, set size 19: 8094
+
+
+Optimal, bad, set size 20: 4701
+Optimal, good, set size 20: 604
+Optimal, great, set size 20: 100
+
+LRUA, bad, set size 20: 7994
+LRUA, good, set size 20: 1051
+LRUA, great, set size 20: 312
+
+Random, bad, set size 20: 8001
+Random, good, set size 20: 7996
+Random, great, set size 20: 7989
+
+
+Optimal, bad, set size 21: 4583
+Optimal, good, set size 21: 585
+Optimal, great, set size 21: 100
+
+LRUA, bad, set size 21: 7903
+LRUA, good, set size 21: 1025
+LRUA, great, set size 21: 265
+
+Random, bad, set size 21: 7889
+Random, good, set size 21: 7890
+Random, great, set size 21: 7891
+
+
+Optimal, bad, set size 22: 4460
+Optimal, good, set size 22: 568
+Optimal, great, set size 22: 100
+
+LRUA, bad, set size 22: 7801
+LRUA, good, set size 22: 990
+LRUA, great, set size 22: 226
+
+Random, bad, set size 22: 7786
+Random, good, set size 22: 7793
+Random, great, set size 22: 7791
+
+
+Optimal, bad, set size 23: 4342
+Optimal, good, set size 23: 552
+Optimal, great, set size 23: 100
+
+LRUA, bad, set size 23: 7703
+LRUA, good, set size 23: 963
+LRUA, great, set size 23: 206
+
+Random, bad, set size 23: 7695
+Random, good, set size 23: 7696
+Random, great, set size 23: 7690
+
+
+Optimal, bad, set size 24: 4224
+Optimal, good, set size 24: 538
+Optimal, great, set size 24: 100
+
+LRUA, bad, set size 24: 7595
+LRUA, good, set size 24: 939
+LRUA, great, set size 24: 190
+
+Random, bad, set size 24: 7594
+Random, good, set size 24: 7587
+Random, great, set size 24: 7597
+
+
+Optimal, bad, set size 25: 4116
+Optimal, good, set size 25: 523
+Optimal, great, set size 25: 100
+
+LRUA, bad, set size 25: 7510
+LRUA, good, set size 25: 917
+LRUA, great, set size 25: 173
+
+Random, bad, set size 25: 7499
+Random, good, set size 25: 7500
+Random, great, set size 25: 7501
+
+
+Optimal, bad, set size 26: 4008
+Optimal, good, set size 26: 507
+Optimal, great, set size 26: 100
+
+LRUA, bad, set size 26: 7406
+LRUA, good, set size 26: 896
+LRUA, great, set size 26: 162
+
+Random, bad, set size 26: 7392
+Random, good, set size 26: 7393
+Random, great, set size 26: 7392
+
+
+Optimal, bad, set size 27: 3902
+Optimal, good, set size 27: 492
+Optimal, great, set size 27: 100
+
+LRUA, bad, set size 27: 7301
+LRUA, good, set size 27: 874
+LRUA, great, set size 27: 154
+
+Random, bad, set size 27: 7290
+Random, good, set size 27: 7292
+Random, great, set size 27: 7287
+
+
+Optimal, bad, set size 28: 3795
+Optimal, good, set size 28: 483
+Optimal, great, set size 28: 100
+
+LRUA, bad, set size 28: 7197
+LRUA, good, set size 28: 861
+LRUA, great, set size 28: 148
+
+Random, bad, set size 28: 7195
+Random, good, set size 28: 7185
+Random, great, set size 28: 7196
+
+
+Optimal, bad, set size 29: 3705
+Optimal, good, set size 29: 468
+Optimal, great, set size 29: 100
+
+LRUA, bad, set size 29: 7113
+LRUA, good, set size 29: 844
+LRUA, great, set size 29: 142
+
+Random, bad, set size 29: 7089
+Random, good, set size 29: 7090
+Random, great, set size 29: 7099
+
+
+Optimal, bad, set size 30: 3603
+Optimal, good, set size 30: 457
+Optimal, great, set size 30: 100
+
+LRUA, bad, set size 30: 7007
+LRUA, good, set size 30: 826
+LRUA, great, set size 30: 135
+
+Random, bad, set size 30: 6997
+Random, good, set size 30: 6983
+Random, great, set size 30: 6993
+
+
