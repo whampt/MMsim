@@ -12,7 +12,7 @@ public class Test {
 		BufferedWriter bw = new BufferedWriter(file);
         
         // This will test reference set sizes 10-30
-        for (int i = 10; i <= 30; i++) {
+        for (int i = 10; i <= 50; i += 5) {
             
             int badO = 0;
             int goodO = 0;
@@ -52,15 +52,15 @@ public class Test {
             }
             
             // Get the averages of each algorithm and their respective programs
-            badO = badO/100;
-            goodO = goodO/100;
-            greatO = greatO/100;
-            badLRU = badLRU/100;
-            goodLRU = goodLRU/100;
-            greatLRU = greatLRU/100;
-            badRandom = badRandom/100;
-            goodRandom = goodRandom/100;
-            greatRandom = greatRandom/100;
+            badO = badO/1000;
+            goodO = goodO/1000;
+            greatO = greatO/1000;
+            badLRU = badLRU/1000;
+            goodLRU = goodLRU/1000;
+            greatLRU = greatLRU/1000;
+            badRandom = badRandom/1000;
+            goodRandom = goodRandom/1000;
+            greatRandom = greatRandom/1000;
             
             bw.write("Optimal, bad, set size " + i + ": " + badO);
             bw.newLine();
