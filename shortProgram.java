@@ -1,4 +1,3 @@
-
 public class shortProgram {
 
 	private int[] refString;
@@ -50,6 +49,7 @@ public class shortProgram {
 	*   81 pages three occurrences and 3 numbers 2 occurrences. 
 	*    
 	*   Aha! Come to think of it, with a random spread , how will we know how many pages we have ?  
+    *   This is the "great/highly structured/predicatible" program
 	*/
 	public shortProgram(byte pages) {
 		refString = new int[pages*100];
