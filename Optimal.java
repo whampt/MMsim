@@ -11,6 +11,14 @@ import java.util.Set;
  */
 public class Optimal
 {
+	/**
+	 * This method takes in a shortProgram and a maximum size for the resSet(an integer).
+	 * It returns the number of page faults.
+	 * @param program
+	 * @param resSetMaxSize
+	 * @return
+	 * TODO:This method currently looks like a constructor.  Make sure to change the name later to make this class more readable.
+	 */
     public static int Optimal(shortProgram program, int resSetMaxSize )
 	{
 		int pageFaults =0;

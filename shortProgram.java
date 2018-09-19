@@ -7,9 +7,12 @@ public class shortProgram {
 
 	private int[] refString;
 	private int page;
-
+	/**
 	// Generates a "good" or "random" program based on boolean.  If true, create good. If false,
 	// create a random string
+	* Boolean constructor.
+	* @param type
+	*/
 	public shortProgram(boolean type) {
 
 		refString = new int[10000];
@@ -55,6 +58,10 @@ public class shortProgram {
 	*    
 	*   Aha! Come to think of it, with a random spread , how will we know how many pages we have ?  
     *   This is the "great/highly structured/predicatible" program
+    *   
+    * 
+    * 	Constructor that takes in a byte as input.
+	* @param pages
 	*/
 	public shortProgram(byte pages) {
 		refString = new int[pages*100];
@@ -91,28 +98,44 @@ public class shortProgram {
 				page++;	
 			}
 	}
-
+	/**
+	 * returns the value in the refString at this specific index
+	 * @param i
+	 * @return
+	 */
 	public int getIndex(int i) {
 
 		return refString[i];
 	}
-
+	/**
+	 * returns the refString array.
+	 * @return
+	 */
 	public int[] getArray() {
 		return refString;
 	}
-
+	/**
+	 * Returns the size of the refString.
+	 * @return
+	 */
 	public int size() {
 		return refString.length;
 	}
-
-	 // swaps array elements i and j
+	/**
+ 	 *swaps array elements i and j
+	 * 
+	 * @param i
+	 * @param j
+	 */
     public void exch(int i, int j) {
         int swap = refString[i];
         refString[i] = refString[j];
         refString[j] = swap;
     }
-
-    // take as input an array of strings and rearrange them in random order
+    /**
+     *It shuffles the refString array.
+     * 
+     */
     public void shuffle() {
         int N = refString.length;
         for (int i = 0; i < N; i++) {
@@ -120,8 +143,10 @@ public class shortProgram {
             exch(i, r);
         }
     }
-
-    // take as input an array of strings and print them out to standard output
+    /**
+     * This method prints the elements of the refString array
+     * 
+     */
     public void show() {
         for (int i = 0; i < refString.length; i++) {
             System.out.println(refString[i]);

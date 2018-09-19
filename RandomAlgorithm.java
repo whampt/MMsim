@@ -1,7 +1,7 @@
 
 /**
  * This is an implementation of one of the paging algorithms
- * 
+ * TODO: Unlike the other two classes that implement an algorithm, this class has a constructor.  While this may be the best way to implement the algorithm, its differences are such that I must wonder if they are to great to be rectified without some noteworthy edits.  An MMSimAlgorithm abstract superclass that each algorithm must be a subtype of may make it things more uniform, as well as make this code easier to improve in the future.
  *
  */
 public class RandomAlgorithm
@@ -11,6 +11,11 @@ public class RandomAlgorithm
 	Boolean inResSet;
 	int numInRes;
 	int pageFaults;
+	/**
+	 * This is the constructor for the class.
+	 * @param len
+	 * @param resSize
+	 */
 	public RandomAlgorithm(shortProgram len, int resSize)
 	{
 		pages=len.getArray();
@@ -20,6 +25,9 @@ public class RandomAlgorithm
 		genStringRan();
 		pageFaults=0;
 	}
+	/**
+	 * This method generates random numbers for your page array.
+	 */
 	private void genStringRan()
 	{
 		for(int i=0;i<pages.length; i++)
@@ -28,6 +36,10 @@ public class RandomAlgorithm
 			pages[i]= inty;
 		}
 	}
+	/**
+	 * This method simulates paging.
+	 * @return
+	 */
 	public int simulateDemandPagingRandomAlgorithm()
 	{
 		for(int i=0;i<pages.length;i++)
@@ -51,6 +63,10 @@ public class RandomAlgorithm
 		}
 		return pageFaults;
 	}
+	/**
+	 * This method checks if a page is in the resSet.
+	 * @param s
+	 */
 	private void checkIfInRes(int s)
 	{
 		int i;
@@ -64,6 +80,10 @@ public class RandomAlgorithm
 		}
 		
 	}
+	/**
+	 * Implements the random algorithm.
+	 * @param s
+	 */
 	private void implementRandomAlgorithm(int s)
 	{
 		int rando= (int)Math.round(Math.random()*resSet.length);
@@ -73,6 +93,12 @@ public class RandomAlgorithm
 		}
 		resSet[rando]=s;
 	}
+	
+	
+	/**
+	 * This method returns the number of page faults.
+	 * @return
+	 */
 	public int getNumPageFaults()
 	{
 		return pageFaults;
