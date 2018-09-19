@@ -44,7 +44,9 @@ public class Page implements Comparable<Page>{
 	public boolean equals(int i){
 		return pageNum==i;
 	}
-	
+	/**
+	 * returns a string of Page information.  It shows the pageNum and page count.
+	 */
 	public String toString() {
 		String s = pageNum + " " + useCount;
 		return s;

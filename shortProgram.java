@@ -8,8 +8,8 @@ public class shortProgram {
 	private int[] refString;
 	private int page;
 	/**
-	// Generates a "good" or "random" program based on boolean.  If true, create good. If false,
-	// create a random string
+	* Generates a "good" or "random" program based on boolean.  If true, create good. If false,
+	* create a random string
 	* Boolean constructor.
 	* @param type
 	*/
@@ -133,7 +133,7 @@ public class shortProgram {
         refString[j] = swap;
     }
     /**
-     *It shuffles the refString array.
+     *This method shuffles the refString array.
      * 
      */
     public void shuffle() {

@@ -20,12 +20,8 @@ public class LRU
 {
 
 	/**
-	 * 
 	 * @param args
-	 */
-
-
-	/**
+	 * 
 	 * lru method that accept a list and resident set size as parameter 
 	 * make a priority queue of the resident set
 	 * if a page is in the resident set, check if its equal with the new page, and if it is, increment its useCount and set flag to true

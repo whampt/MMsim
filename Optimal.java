@@ -27,8 +27,7 @@ public class Optimal
 		
 		program.shuffle();
 		program.shuffle();
-		//program.show();
-		/**
+		/*
 		 * outer loop in which we go through the pages required by our 'program'
 		 * y is a counter for how many slots are filled in resident set
 		 */
