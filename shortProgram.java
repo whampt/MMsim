@@ -1,3 +1,8 @@
+/**
+ * This class represents a short program of a certain number of pages.
+ * The refString variable is an int[] that holds various page indeces.
+ * The page variable refers to the current page that you want to insert into the refString.
+ */
 public class shortProgram {
 
 	private int[] refString;

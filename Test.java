@@ -3,13 +3,17 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
-
+/**
+ * This class tests the program.
+ * 
+ *
+ */
 public class Test {
    
     public static void main(String[] args) throws IOException {
         
         FileWriter file = new FileWriter("Tests.txt");
-		BufferedWriter bw = new BufferedWriter(file);
+    	BufferedWriter bw = new BufferedWriter(file);
         
         // This will test reference set sizes 10-30
         for (int i = 10; i <= 50; i += 5) {
@@ -89,5 +93,6 @@ public class Test {
         }
         
         bw.close();
+        System.out.println("Done!");
     }
 }

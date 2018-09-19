@@ -1,4 +1,8 @@
-
+/**
+ * This class represents a page of memory.
+ * 
+ *
+ */
 public class Page implements Comparable<Page>{
 	int lastUsed;
 	int pageNum;
@@ -17,7 +21,9 @@ public class Page implements Comparable<Page>{
 	}
 	
 	/**
-	 * compare the lru last used page count. 
+	 * compare the lru last used page count.
+	 * TODO: get around to changing this to a boolean method
+	 * 
 	 */
 	@Override
 	public int compareTo(Page other) {
@@ -30,7 +36,9 @@ public class Page implements Comparable<Page>{
 	}
 	
 	/**
-	 * call to equal method checks if two pages equals 
+	 * When you call the equals method, it returns
+	 * a boolean that tells you if an index is equal
+	 * to the current Page's index.
 	 */
 	public boolean equals(int i){
 		return pageNum==i;

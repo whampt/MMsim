@@ -1,5 +1,9 @@
 
-
+/**
+ * This is an implementation of one of the paging algorithms
+ * 
+ *
+ */
 public class RandomAlgorithm
 {
     int[] pages;
@@ -7,7 +11,7 @@ public class RandomAlgorithm
 	Boolean inResSet;
 	int numInRes;
 	int pageFaults;
-	public RandomAlgorithm(shortProgram len, int resSize)//int thinkoMachigco
+	public RandomAlgorithm(shortProgram len, int resSize)
 	{
 		pages=len.getArray();
 		resSet=new int[resSize];
@@ -22,7 +26,6 @@ public class RandomAlgorithm
 		{
 			int inty=(int) Math.round(Math.random()*99);
 			pages[i]= inty;
-//			System.out.println(pages[i]);
 		}
 	}
 	public int simulateDemandPagingRandomAlgorithm()
@@ -53,21 +56,12 @@ public class RandomAlgorithm
 		int i;
 		for(i=0;i<resSet.length; i++)
 		{
-//			System.out.println("_"+resSet[i]+"_"+s);
 			if(resSet[i]==s)
 			{
 				inResSet=true;
 				break;
 			}
 		}
-//		if(numInRes<resSet.length)//have to deal with null values
-//		{
-//			if(done==true)
-//			{
-//				inResSet=false;
-//			}
-//		}
-//		System.out.println("Greetings");
 		
 	}
 	private void implementRandomAlgorithm(int s)
@@ -79,19 +73,42 @@ public class RandomAlgorithm
 		}
 		resSet[rando]=s;
 	}
-//	public static Boolean checkForNullInRes()
-//	{
-//		for(int i=0; i<resSet.length;i++)
-//		{
-//			if(resSet[i]=="null")
-//			{
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
 	public int getNumPageFaults()
 	{
 		return pageFaults;
 	}
 }
+
+
+//last statement in forloop of genStringRan
+//System.out.println(pages[i]);
+
+
+
+//First line after the for loop was declared in checkIfInRes
+//System.out.println("_"+resSet[i]+"_"+s);
+
+
+//Found in checkIfInRes after the end of the code before the closing bracket
+//if(numInRes<resSet.length)//have to deal with null values
+//{
+//	if(done==true)
+//	{
+//		inResSet=false;
+//	}
+//}
+//System.out.println("Greetings");
+
+
+
+//public static Boolean checkForNullInRes()
+//{
+//	for(int i=0; i<resSet.length;i++)
+//	{
+//		if(resSet[i]=="null")
+//		{
+//			return true;
+//		}
+//	}
+//	return false;
+//}
