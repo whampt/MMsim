@@ -16,8 +16,7 @@ public class Test {
     */
     public static void main(String[] args) throws IOException {
         
-//        FileWriter file = new FileWriter("Tests.txt");
-    	FileWriter file = new FileWriter("C:\\Users\\jpd\\portfolioExpansionProject\\memManSim\\src\\Tests.txt");
+      FileWriter file = new FileWriter("Tests.txt");
     	BufferedWriter bw = new BufferedWriter(file);
         
         // This will test reference set sizes 10-30
@@ -98,6 +97,5 @@ public class Test {
         }
         
         bw.close();
-        System.out.println("Done!");
     }
 }
