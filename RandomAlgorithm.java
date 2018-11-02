@@ -1,7 +1,7 @@
 
 /**
  * This is an implementation of one of the paging algorithms
- * TODO: Unlike the other two classes that implement an algorithm, this class has a constructor.  While this may be the best way to implement the algorithm, its differences are such that I must wonder if they are to great to be rectified without some noteworthy edits.  An MMSimAlgorithm abstract superclass that each algorithm must be a subtype of may make it things more uniform, as well as make this code easier to improve in the future.
+ * TODO: Unlike the other two classes that implement an algorithm, this class has a constructor.  While this may be the best way to implement the algorithm, its differences are such that I must wonder if they are to great to be rectified without some noteworthy edits.  An MMSimAlgorithm abstract superclass that each algorithm must be a subtype of may make things more uniform, as well as make this code easier to improve in the future.
  *
  */
 public class RandomAlgorithm

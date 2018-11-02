@@ -19,7 +19,7 @@ public class Optimal
 	 * @return
 	 * TODO:This method currently looks like a constructor.  Make sure to change the name later to make this class more readable.
 	 */
-    public static int Optimal(shortProgram program, int resSetMaxSize )
+    public static int optimal(shortProgram program, int resSetMaxSize )
 	{
 		int pageFaults =0;
 		Set<Integer> resSet = new HashSet<Integer>(resSetMaxSize, (float)2.0);
@@ -33,7 +33,7 @@ public class Optimal
 		 */
 		int resSetCurrSize = 0;
 		for(int i=0; i< program.size(); i++)
-		{ 
+		{
 			  
 			if ( !resSet.contains(program.getIndex(i)))
 			{

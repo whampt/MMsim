@@ -1,8 +1,14 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * This class tests the program.
  * 
@@ -16,7 +22,9 @@ public class Test {
     */
     public static void main(String[] args) throws IOException {
         
-      FileWriter file = new FileWriter("Tests.txt");
+//        FileWriter file = new FileWriter("Tests.txt");
+    	String fName="CTests.txt";
+    	FileWriter file = new FileWriter(fName);
     	BufferedWriter bw = new BufferedWriter(file);
         
         // This will test reference set sizes 10-30
@@ -43,9 +51,9 @@ public class Test {
                 shortProgram great = new shortProgram((byte) 100);
                 great.shuffle();
                    
-                badO += Optimal.Optimal(bad, i);
-                goodO += Optimal.Optimal(good, i);
-                greatO += Optimal.Optimal(great, i);
+                badO += Optimal.optimal(bad, i);
+                goodO += Optimal.optimal(good, i);
+                greatO += Optimal.optimal(great, i);
                 
                 badLRU += LRU.lru(bad, i);
                 goodLRU += LRU.lru(good, i);
@@ -97,5 +105,32 @@ public class Test {
         }
         
         bw.close();
+        System.out.println("Done!");
+        readFile(fName);
+    }
+    public static void readFile(String fName)
+    {
+ 	   try {
+// 			File file = new File(fName);
+// 			FileReader fR = new FileReader(file);
+// 			BufferedReader bR = new BufferedReader(fR);
+// 			String line;
+ 			List<String> data=new ArrayList<String>();
+ 			data = Files.readAllLines(new File(fName).toPath(), Charset.defaultCharset() );
+ 			for(int i=0;i<data.size();i++)
+ 			{
+ 				System.out.println(data.get(i));
+ 			}
+// 			while ((line = bR.readLine()) != null) {
+// 				data.add(bR.readLine());
+// 			}
+// 			fR.close();
+// 			System.out.println("Contents of file:");
+// 			for(int i=0;i<data.size();i++){
+// 				System.out.println("*"+line+"*");
+// 			}
+ 		} catch (IOException e) {
+ 			e.printStackTrace();
+ 		}
     }
 }
