@@ -44,8 +44,8 @@ public class RandomAlgorithm
 	{
 		for(int i=0;i<pages.length;i++)
 		{
-			inResSet=false;			//Figure out what the deal is when we have this line commented out.
-			checkIfInRes(pages[i]); //I know something bad should happen, but I don't understand why it's this.
+			inResSet=false;
+			checkIfInRes(pages[i]);
 
 			if(inResSet==true){continue;}
 
@@ -104,37 +104,3 @@ public class RandomAlgorithm
 		return pageFaults;
 	}
 }
-
-
-//last statement in forloop of genStringRan
-//System.out.println(pages[i]);
-
-
-
-//First line after the for loop was declared in checkIfInRes
-//System.out.println("_"+resSet[i]+"_"+s);
-
-
-//Found in checkIfInRes after the end of the code before the closing bracket
-//if(numInRes<resSet.length)//have to deal with null values
-//{
-//	if(done==true)
-//	{
-//		inResSet=false;
-//	}
-//}
-//System.out.println("Greetings");
-
-
-
-//public static Boolean checkForNullInRes()
-//{
-//	for(int i=0; i<resSet.length;i++)
-//	{
-//		if(resSet[i]=="null")
-//		{
-//			return true;
-//		}
-//	}
-//	return false;
-//}
