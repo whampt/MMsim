@@ -22,8 +22,7 @@ public class Test {
     */
     public static void main(String[] args) throws IOException {
         
-//        FileWriter file = new FileWriter("Tests.txt");
-    	String fName="CTests.txt";
+    	String fName="Tests.txt";
     	FileWriter file = new FileWriter(fName);
     	BufferedWriter bw = new BufferedWriter(file);
         
@@ -111,24 +110,12 @@ public class Test {
     public static void readFile(String fName)
     {
  	   try {
-// 			File file = new File(fName);
-// 			FileReader fR = new FileReader(file);
-// 			BufferedReader bR = new BufferedReader(fR);
-// 			String line;
  			List<String> data=new ArrayList<String>();
  			data = Files.readAllLines(new File(fName).toPath(), Charset.defaultCharset() );
  			for(int i=0;i<data.size();i++)
  			{
  				System.out.println(data.get(i));
  			}
-// 			while ((line = bR.readLine()) != null) {
-// 				data.add(bR.readLine());
-// 			}
-// 			fR.close();
-// 			System.out.println("Contents of file:");
-// 			for(int i=0;i<data.size();i++){
-// 				System.out.println("*"+line+"*");
-// 			}
  		} catch (IOException e) {
  			e.printStackTrace();
  		}
